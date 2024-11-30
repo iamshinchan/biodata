@@ -1,0 +1,32 @@
+<img src="./assets/bg-design.png" class="bg-img">
+<div class="container">
+    <header>
+
+        <div style="text-align:center;">
+            <img src="./assets/ganapati.png" alt="Profile Picture" class="ganapati">
+        </div>
+        <p style="text-align:center;">|| {{ganeshay[lang]}} ||</p>
+    </header>
+    <h2 style="text-align:center;">{{title[lang]}}</h2>
+    <div class="d-flex user-details">
+        <div>
+
+            @for(str of getObjectArr(biodata[lang]); track str)
+            {
+            <h2 style="text-align:center;">{{formatStr(str) | titlecase}}</h2>
+            @for(subStr of getObjectArr(biodata[lang][str]); track subStr)
+            {
+            <table style="width: 100%;">
+                <tr>
+                    <td class="data"><strong>{{formatStr(subStr) | titlecase}}</strong></td>
+                    <td style="width: 5%;">:</td>
+                    <td>{{biodata[lang][str][subStr]}}</td>
+                </tr>
+            </table>
+            }
+            }
+        </div>
+        <img src="./assets/Vikram Ramekar.jpeg" alt="Profile Picture" class="profile-pic">
+
+    </div>
+</div>
